@@ -39,7 +39,7 @@ export default {
         freq.push({label: key, val: val});
       }
       freq.sort((a, b) => {
-        return a.val < b.val;
+        return b.val - a.val;
       });
       return freq.slice(0, 5);
     }
