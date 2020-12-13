@@ -7,7 +7,6 @@
         <ol>
           <li>Milo</li>
           <li>Nutella</li>
-          <li>Kingyo</li>
         </ol>
       </b-col>
     </b-row>
