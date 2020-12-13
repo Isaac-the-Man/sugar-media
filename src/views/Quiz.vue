@@ -1,6 +1,14 @@
 <template>
   <div class="mt-3">
     <b-row align-h="center">
+      <b-col cols="10" class="text-center">
+        <h3>Sugar Label Quiz</h3>
+        <p v-if="index < sugars.length">
+          Do you know there are multiple ways to label sugar? Here's a quick quiz for you to try out.
+        </p>
+      </b-col>
+    </b-row>
+    <b-row align-h="center">
       <b-col cols="10">
         <div v-if="index < sugars.length" class="question mt-3 p-5 rounded shadow">
           <div class="d-flex align-items-center justify-content-center">
@@ -13,15 +21,23 @@
           </div>
         </div>
         <div v-else class="text-center">
-          <h1>Congratulation !</h1>
-          <h3>
-            You Scored {{ ans.length }}/{{ sugars.length }} !
-          </h3>
-          <h3>In fact, ALL of the chemicals in the quiz is a variant of sugar !</h3>
-          <h1>List of sugars you missed...</h1>
-          <ul>
-            <li v-for="(a, i) in missed" :key="i">{{ a }}</li>
-          </ul>
+          <p>
+            You Scored {{ ans.length }}/{{ sugars.length }} ! <br>
+            In fact, <b>ALL</b> of the chemicals in the quiz is a variant of sugar ! Checkout more information on
+            <b-link target="_blank"
+                    href="https://www.bhf.org.uk/-/media/images/heart-matters/march-2017/pps002_sugar_infographic-01.jpg?h=2222&w=620&la=en&hash=99A0B62A3226D16360F403A9BA283267D1CFEBA0">
+              50 shades of sugar
+            </b-link>.
+          </p>
+          <div v-if="missed.length > 0">
+            <p>
+              Sugars you missed...
+            </p>
+            <ul>
+              <li v-for="(a, i) in missed" :key="i">{{ a }}</li>
+            </ul>
+          </div>
+          <b-button variant="primary" class="shadow" pill to="/stats">view stats</b-button>
         </div>
       </b-col>
     </b-row>

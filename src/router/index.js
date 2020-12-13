@@ -3,6 +3,11 @@ import VueRouter from 'vue-router'
 import Home from '../views/Home.vue'
 import Quiz from "@/views/Quiz";
 import Stats from "@/views/Stats";
+import Food from "@/views/Food";
+import Data from "@/views/Data";
+import Tactics from "@/views/Tactics";
+import Cases from "@/views/Cases";
+import End from "@/views/End";
 
 Vue.use(VueRouter)
 
@@ -15,15 +20,37 @@ const routes = [
   {
     path: '/quiz',
     name: 'Quiz',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
     component: Quiz
+  },
+  {
+    path: '/food',
+    name: 'Food',
+    component: Food
+  },
+  {
+    path: '/data',
+    name: 'Data',
+    component: Data
+  },
+  {
+    path: '/tactics',
+    name: 'Tactics',
+    component: Tactics
   },
   {
     path: '/stats',
     name: 'Stats',
     component: Stats
+  },
+  {
+    path: '/case-study',
+    name: 'Cases',
+    component: Cases
+  },
+  {
+    path: '/end',
+    name: 'End',
+    component: End
   },
 ]
 
